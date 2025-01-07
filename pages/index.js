@@ -1,3 +1,4 @@
+
 export default function Home() {
   return (
       <>
@@ -7,6 +8,8 @@ export default function Home() {
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="/styles/global.css" />
         
+
+        <h1 className='z-50 w-screen h-screen flex absolute text-white '>Hola</h1>
         <div className="gradient-bg">
           <svg xmlns="http://www.w3.org/2000/svg">
             <defs>

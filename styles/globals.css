@@ -1,4 +1,11 @@
 /* Reset margins and padding */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tus estilos personalizados aquí */
+
+
 html, body {
   margin: 0;
   padding: 0;
@@ -62,8 +69,10 @@ html, body {
 .gradient-bg {
   position: relative; /* Ensures child elements are positioned correctly */
   width: 100vw;
+  z-index:0;
   height: 100vh;
   overflow: hidden;
+  z-index:0;
   background: linear-gradient(40deg, var(--color-bg1), var(--color-bg2));
 }
 
@@ -175,5 +184,6 @@ html, body {
 
     opacity: 0.7;
   }
+  
   
   
