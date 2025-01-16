@@ -145,7 +145,7 @@
         } 
       },
       { 
-        "option": "pop art", 
+        "option": "popart", 
         "scores": { 
           "happy": 0.3,
           "glam": 0.3,
@@ -409,7 +409,7 @@
     "question": "Pick a scent",
     "answers": [
       { 
-        "option": "cinnammon", 
+        "option": "cinnamon", 
         "scores": { 
           "classic":0.4,
           "soul jazz": 0.3,
@@ -458,7 +458,7 @@
         } 
       },
 	{ 
-        "option": "vainilla", 
+        "option": "vanilla", 
         "scores": { 
           "indie pop":0.4,
           "pop":0.3,

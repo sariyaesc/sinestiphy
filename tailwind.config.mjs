@@ -8,6 +8,9 @@ export default {
   ],
   theme: {
     extend: {
+      transitionDuration: {
+        700: '700ms',
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
@@ -15,4 +18,5 @@ export default {
     },
   },
   plugins: [],
+  
 };
