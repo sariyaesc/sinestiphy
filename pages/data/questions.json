@@ -1,0 +1,484 @@
+[{
+    "index": 1,
+    "question": "Pick a color combination",
+    "answers": [
+      { 
+        "option": "yellow", 
+        "scores": { 
+          "soul jazz": 0.25,
+          "funk": 0.30,
+          "cumbia": 0.25,
+          "country": 0.20,
+          "happy": 0.4,
+          "energetic": 0.4,
+          "mellow": 0.2
+        } 
+      },
+      { 
+        "option": "blue-pink", 
+        "scores": {
+          "r&b": 0.3, 
+          "lofi": 0.3,
+          "house": 0.2,
+          "pop":0.2,
+          "moody": 0.2,
+          "calm": 0.3,
+          "chill": 0.4
+        } 
+      },
+      { 
+        "option": "darkblue-blue", 
+        "scores": {
+          "classic": 0.3,
+          "hip hop rap": 0.4,
+          "rock": 0.3,
+          "sad": 0.5,
+          "calm": 0.5
+        } 
+      },
+      { 
+        "option": "orange-pink", 
+        "scores": {
+          "house": 0.3,
+          "pop": 0.2,
+          "disco": 0.2,
+          "cumbia": 0.3,
+          "girly": 0.5,
+          "chill": 0.3,
+          "glam": 0.2
+        } 
+      },
+      { 
+        "option": "red-blue", 
+        "scores": {
+          "disco": 0.3,
+          "r&b": 0.3,
+          "indie pop": 0.4,
+          "dark": 0.3,
+          "moody": 0.4,
+          "chill": 0.3
+        } 
+      },
+      { 
+        "option": "red", 
+        "scores": {
+          "rock": 0.3,
+          "metal": 0.3,
+          "punk": 0.2,
+          "reggaeton": 0.2,
+          "corridos": 0.2,
+          "glam": 0.3,
+          "energetic": 0.3
+        } 
+      },
+      { 
+        "option": "aqua-pink", 
+        "scores": {
+          "lofi": 0.3,
+          "soul jazz": 0.3,
+          "r&b": 0.3,
+          "pop": 0.1,
+          "calm": 0.4,
+          "girly": 0.4,
+          "chill": 0.2
+        } 
+      },
+      { 
+        "option": "blue-orange", 
+        "scores": {
+          "r&b": 0.1,
+          "punk": 0.3,
+          "indie pop": 0.2,
+          "country": 0.2,
+          "techno": 0.2,
+          "moody": 0.3,
+          "energetic": 0.4
+        } 
+      }
+    ]
+},
+  {
+    "index": 2,
+    "question": "Pick an art style",
+    "answers": [
+      { 
+        "option": "baroque", 
+        "scores": { 
+          "sad": 0.3,
+          "dark": 0.4,
+          "calm": 0.3
+        } 
+      },
+      { 
+        "option": "artnouveau", 
+        "scores": { 
+          "happy": 0.2,
+          "glam": 0.3,
+          "chill": 0.2,
+          "girly": 0.3
+        } 
+      },
+      { 
+        "option": "artdeco", 
+        "scores": { 
+          "happy": 0.1,
+          "glam": 0.3,
+          "chill": 0.2,
+          "sad":0.1
+        } 
+      },
+      { 
+        "option": "impressionism", 
+        "scores": { 
+          "chill": 0.4,
+          "dark": 0.3,
+          "mellow": 0.3
+        } 
+      },
+      { 
+        "option": "modern", 
+        "scores": { 
+          "happy": 0.3,
+          "mellow": 0.3,
+          "energetic": 0.3,
+          "chill": 0.1
+        } 
+      },
+      { 
+        "option": "pop art", 
+        "scores": { 
+          "happy": 0.3,
+          "glam": 0.3,
+          "girly": 0.4
+        } 
+      }
+    ]
+  },
+  {
+    "index": 3,
+    "question": "Pick a texture",
+    "answers": [
+      { 
+        "option": "silk", 
+        "scores": { 
+          "classic": 0.4,
+          "r&b": 0.3,
+          "soul jazz": 0.3,
+          "moody": 0.2,
+          "calm": 0.4,
+          "glam": 0.3
+        } 
+      },
+      { 
+        "option": "honey", 
+        "scores": { 
+          "funk": 0.4,
+          "disco": 0.3,
+          "house": 0.2,
+          "happy": 0.3,
+          "mellow": 0.3,
+          "energetic": 0.3
+        } 
+      },
+      { 
+        "option": "paper", 
+        "scores": { 
+          "punk": 0.4,
+          "rock": 0.3,
+          "metal": 0.3,
+          "dark": 0.3,
+          "sad": 0.4
+        } 
+      },
+      { 
+        "option": "fur", 
+        "scores": { 
+          "disco": 0.4,
+          "pop": 0.3,
+          "indie pop": 0.4,
+          "house": 0.1,
+          "glam": 0.4,
+          "happy": 0.2,
+          "girly": 0.4
+        } 
+      },
+      { 
+        "option": "leather", 
+        "scores": { 
+          "rock": 0.3,
+          "country": 0.25,
+          "hip hop rap": 0.25,
+          "corridos": 0.2,
+          "moody": 0.2,
+          "dark": 0.3
+        } 
+      },
+      { 
+        "option": "leafs", 
+        "scores": { 
+          "reggaeton": 0.3,
+          "cumbia": 0.4,
+          "corridos": 0.1,
+          "happy": 0.3,
+          "energetic": 0.3,
+          "chill": 0.2
+        } 
+      }
+    ]
+  },
+    {
+    "index": 4,
+    "question": "Pick a view",
+    "answers": [
+      { 
+        "option": "ocean", 
+        "scores": { 
+          "soul jazz":0.4,
+          "lofi":0.2,
+          "r&b":0.3,
+          "funk":0.2,
+          "happy":0.2,
+          "calm":0.5,
+          "chill":0.3 
+        } 
+      },
+      { 
+        "option": "yard", 
+        "scores": { 
+          "pop":0.4,
+          "house":0.2,
+          "disco":0.3,
+          "happy":0.2,
+          "chill":0.3,
+          "girly":0.5
+        } 
+      },
+      { 
+        "option": "ranch", 
+        "scores": { 
+          "country":0.5,
+          "indie pop":0.4,
+          "calm":0.4,
+          "mellow":0.2
+        } 
+      },
+      { 
+        "option": "city", 
+        "scores": { 
+          "techno":0.38,
+          "hip hop rap":0.4,
+          "disco":0.22,
+          "sad":0.3,
+          "moody":0.38,
+          "dark":0.32
+        } 
+      },
+       { 
+        "option": "tropical", 
+        "scores": { 
+          "cumbia":0.45,
+          "reggaeton":0.3,
+          "corridos":0.25,
+          "happy":0.3,
+          "energetic":0.6
+        } 
+      },
+       { 
+        "option": "mountains", 
+        "scores": { 
+          "classic":0.4,
+          "soul jazz":0.2,
+          "r&b":0.2,
+          "calm":0.5,
+          "happy":0.2,
+          "moody":0.1
+        } 
+      }
+    ]
+    },
+    {
+    "index": 5,
+    "question": "Pick a weather",
+    "answers": [
+      { 
+        "option": "sunny", 
+        "scores": { 
+          "reggaeton":0.25,
+          "cumbia":0.25,
+          "funk":0.25,
+          "pop":0.15,
+          "country":0.1,
+          "house":0.2,
+          "disco":0.15,
+          "happy": 0.35,
+          "mellow":0.40,
+        "energetic":0.25
+        } 
+      },
+      { 
+        "option": "rainy", 
+        "scores": { 
+          "r&b":0.25,
+          "lofi":0.30,
+          "classic":0.25,
+          "soul jazz":0.20,
+          "dark":0.3,
+          "sad":0.3,
+          "moody":0.2,
+          "chill":0.2
+        } 
+      },
+	    { 
+        "option": "stormy", 
+        "scores": { 
+          "metal":0.4,
+          "rock":0.4,
+          "punk":0.4,
+          "corridos":0.3,
+          "techno":0.25,
+          "hip hop rap":0.3,
+          "dark":0.4,
+          "energetic":0.4
+        } 
+      }
+    ]
+    },  
+      
+      {
+    "index": 6,
+    "question": "Pick a fruit",
+    "answers": [
+      { 
+        "option": "mango", 
+        "scores": { 
+          "funk":0.35,
+    "reggaeton":0.30,
+          "cumbia":0.2,
+          "disco":0.15
+        } 
+      },
+      { 
+        "option": "strawberry", 
+        "scores": { 
+          "pop": 0.5,
+          "indie pop": 0.3,
+          "soul jazz":0.2
+          
+        } 
+      },
+      { 
+        "option": "grapes", 
+        "scores": { 
+          "hip hop rap": 0.4,
+          "soul jazz": 0.3,
+          "r&b":0.2,
+          "classic":0.20
+          
+        } 
+      },    
+    { 
+        "option": "apples", 
+        "scores": { 
+          "country":0.45,
+          "punk":0.4,
+          "metal":0.15
+          
+        } 
+      },
+      { 
+        "option": "granade", 
+        "scores": { 
+          "metal":0.4,
+          "rock":0.3,
+          "classic":0.2         
+        } 
+      },
+      { 
+        "option": "banana", 
+        "scores": { 
+          "cumbia":0.6,
+          "house":0.35,
+          "reggaeton":0.25
+        } 
+      }
+    ]
+},
+	
+      {
+    "index": 7,
+    "question": "Pick a scent",
+    "answers": [
+      { 
+        "option": "cinnammon", 
+        "scores": { 
+          "classic":0.4,
+          "soul jazz": 0.3,
+          "r&b":0.2,
+          "corridos":0.1,
+          "moody":0.4,
+          "dark":0.3,
+          "mellow":0.2
+        } 
+      },
+      { 
+        "option": "roses", 
+        "scores": { 
+          "r&b":0.35,
+          "indie pop":0.3,
+          "pop":0.2,
+          "soul jazz":0.15,
+          "girly":0.5,
+          "glam":0.3,
+          "moody":0.2,
+          "mellow":0.1
+        } 
+      },
+      { 
+        "option": "citric", 
+        "scores": { 
+          "funk":0.4,
+          "disco":0.3,
+          "pop":0.2,
+          "cumbia":0.1,
+          "energetic":0.4,
+          "happy":0.3,
+          "chill":0.2
+        } 
+      },
+      { 
+        "option": "mint", 
+        "scores": { 
+          "house": 0.35,
+          "techno":0.3,
+          "lofi":0.2,
+          "hip hop rap":0.2,
+         "chill":0.4,
+         "calm":0.3,
+         "moody":0.2 
+        } 
+      },
+	{ 
+        "option": "vainilla", 
+        "scores": { 
+          "indie pop":0.4,
+          "pop":0.3,
+          "country":0.2,
+          "mellow":0.4,
+          "girly":0.2,
+          "happy":0.3,
+          "glam":0.4
+        } 
+      },
+      { 
+        "option": "lemon", 
+        "scores": { 
+          "punk":0.35,
+          "rock":0.3,
+          "metal":0.2,
+          "techno":0.15,
+          "energetic":0.4,
+          "moody":0.2          
+        } 
+      }
+]
+      }]
