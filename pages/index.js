@@ -1,7 +1,7 @@
 import Button from "../components/common/Button";
 import Background from "../components/common/Background";
 import LoginBtn from "../components/common/Login-Btn";
-
+import LoginBtnSpotify from "../components/common/LoginBtnSpotify";
 
   export default function Home() {
     return (
@@ -39,8 +39,9 @@ import LoginBtn from "../components/common/Login-Btn";
         <section id="how_it_works_section" className="bg-[#dce8d9]">
         <h1 className="text-white text-7xl text-left mx-16 pt-16 z-10 drop-shadow-lg" >HOW DOES IT WORK?</h1>
         
+        
         </section>
-      
+        <LoginBtnSpotify>Hola</LoginBtnSpotify>
         
       </>
     );

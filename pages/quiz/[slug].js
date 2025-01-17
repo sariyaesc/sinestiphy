@@ -4,6 +4,7 @@ import questions from "../data/questions.json";
 import Background from "../../components/common/Background";
 import Image from "next/image";
 
+
 export default function QuizQuestion() {
   const router = useRouter();
   const { slug } = router.query;
@@ -71,8 +72,12 @@ export default function QuizQuestion() {
             ))}
           </section>
         </div>
+        <div className="flex flex wrap mx14">
+        <h1 className="z-10 text-xs flex flex-wrap">{JSON.stringify(scores)}</h1>
+        </div>
       </section>
     
     </div>
   );
 }
+

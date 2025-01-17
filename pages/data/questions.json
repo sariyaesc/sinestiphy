@@ -5,7 +5,6 @@
       { 
         "option": "yellow", 
         "scores": { 
-          "soul jazz": 0.25,
           "funk": 0.30,
           "cumbia": 0.25,
           "country": 0.20,
@@ -17,9 +16,9 @@
       { 
         "option": "blue-pink", 
         "scores": {
-          "r&b": 0.3, 
+          "r&b": 0.4, 
           "lofi": 0.3,
-          "house": 0.2,
+          "house": 0.3,
           "pop":0.2,
           "moody": 0.2,
           "calm": 0.3,
@@ -30,8 +29,8 @@
         "option": "darkblue-blue", 
         "scores": {
           "classic": 0.3,
-          "hip hop rap": 0.4,
-          "rock": 0.3,
+          "hip hop rap": 0.3,
+          "rock": 0.4,
           "sad": 0.5,
           "calm": 0.5
         } 
