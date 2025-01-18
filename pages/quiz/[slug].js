@@ -70,7 +70,7 @@ export default function QuizQuestion() {
                   alt={`${answer.option}`}
                   width={160}
                   height={160}
-                  className="rounded-xl  drop-shadow-2xl hover:brightness-75 transition duration-700"
+                  className="rounded-xl drop-shadow-lg hover:brightness-75 transition duration-700"
                 ></Image>
               </button>
             ))}
