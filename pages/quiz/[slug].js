@@ -28,7 +28,7 @@ export default function QuizQuestion() {
     } else {
       router.push({
         pathname: "/results",
-        query: { scores: JSON.stringify(updatedScores) },
+        query: {  scores: JSON.stringify(updatedScores) },
       });
     }
   };
@@ -66,15 +66,13 @@ export default function QuizQuestion() {
                   alt={`${answer.option}`}
                   width={160}
                   height={160}
-                  className="rounded-xl border-solid border-white border-4 hover:brightness-75 transition duration-700"
+                  className="rounded-xl  drop-shadow-2xl hover:brightness-75 transition duration-700"
                 ></Image>
               </button>
             ))}
           </section>
         </div>
-        <div className="flex flex wrap mx14">
-        <h1 className="z-10 text-xs flex flex-wrap">{JSON.stringify(scores)}</h1>
-        </div>
+        
       </section>
     
     </div>

@@ -1,6 +1,4 @@
-import Button from "../components/common/Button";
 import Background from "../components/common/Background";
-import LoginBtn from "../components/common/Login-Btn";
 import LoginBtnSpotify from "../components/common/LoginBtnSpotify";
 
   export default function Home() {
@@ -33,7 +31,7 @@ import LoginBtnSpotify from "../components/common/LoginBtnSpotify";
           <p className="text-white text-md my-5 text-center">
             Create playlists based on vibes, visuals, and feelings.
           </p>
-          <Button color="green">Start Here</Button>
+          <LoginBtnSpotify>Start Here</LoginBtnSpotify>
         </section>
   
         <section id="how_it_works_section" className="bg-[#dce8d9]">
@@ -41,7 +39,7 @@ import LoginBtnSpotify from "../components/common/LoginBtnSpotify";
         
         
         </section>
-        <LoginBtnSpotify>Hola</LoginBtnSpotify>
+        
         
       </>
     );
