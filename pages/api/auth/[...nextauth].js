@@ -13,10 +13,6 @@ const scopes = [
 
 export const authOptions={
     providers:[
-        GoogleProvider({
-            clientId:process.env.GOOGLE_ID,
-            clientSecret:process.env.GOOGLE_SECRET
-        }),
         SpotifyProvider({
             clientId: process.env.SPOTIFY_CLIENT_ID,
             clientSecret: process.env.SPOTIFY_CLIENT_SECRET,
