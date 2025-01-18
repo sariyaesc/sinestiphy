@@ -49,7 +49,7 @@ export default function Results() {
         <link rel="stylesheet" href="/styles/global.css" />
     <div className="relative h-[100vh] flex flex-col justify-center items-center">
         
-      <Background width="100%" height="100%" className="absolute top-0 left-0 z-0 brightness-75" />
+      <Background width="100%" height="100%" className="absolute top-0 left-0 z-0" />
 
       <div className="z-10 text-center">
         <h1 className="text-4xl text-white font-bold mb-5">Your Quiz Results</h1>

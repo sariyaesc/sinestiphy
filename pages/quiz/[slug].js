@@ -43,7 +43,7 @@ export default function QuizQuestion() {
         <Background
           width="100%"
           height="100%"
-          className="absolute top-0 left-0 z-0 brightness-75"
+          className="absolute top-0 left-0 z-0 brightness-90"
         />
 
         <div className="text-white z-10 ">{`${questionIndex + 1} / ${
