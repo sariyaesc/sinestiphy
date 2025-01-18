@@ -42,7 +42,13 @@ export default function Results() {
   if (!scores) return <p>Loading results...</p>;
 
   return (
+    <>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="/styles/global.css" />
     <div className="relative h-[100vh] flex flex-col justify-center items-center">
+        
       <Background width="100%" height="100%" className="absolute top-0 left-0 z-0 brightness-75" />
 
       <div className="z-10 text-center">
@@ -58,5 +64,6 @@ export default function Results() {
         </p>
       </div>
     </div>
+    </>
   );
 }

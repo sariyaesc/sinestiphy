@@ -35,6 +35,10 @@ export default function QuizQuestion() {
 
   return (
     <div>
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="/styles/global.css" />
       <section className="relative h-[100vh] flex flex-col p-16 justify-center items-center">
         <Background
           width="100%"
