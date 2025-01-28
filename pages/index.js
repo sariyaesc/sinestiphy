@@ -139,7 +139,7 @@ export default function Home() {
           />
           <h1 className="text-white text-8xl px-7 font-bold">About You</h1>
           <p className="text-white font-semibold px-7 text-2xl pb-10">
-            We are a great
+            Now your turn 
           </p>
           <p className="text-white text-semibold px-7 text-lg">
             We wanna hear about you! If you have any suggestion, comment, or anything you wanna share

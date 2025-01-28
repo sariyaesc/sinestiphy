@@ -30,51 +30,18 @@ export default function Results() {
   const moods = ["happy", "energetic", "mellow", "chill", "calm"];
 
   useEffect(() => {
-    if (!router.query.scores) return;
-
-    try {
-      const parsedScores = JSON.parse(router.query.scores);
-      setScores(parsedScores);
-
-      const genreScores = Object.entries(parsedScores).filter(([key]) =>
-        genres.includes(key)
-      );
-      const moodScores = Object.entries(parsedScores).filter(([key]) =>
-        moods.includes(key)
-      );
-
-      const topGenreResult = genreScores.reduce(
-        (max, curr) => (curr[1] > max[1] ? curr : max),
-        ["", 0]
-      )[0];
-      setTopGenre(topGenreResult);
-
-      const topMoodsResult = moodScores
-        .sort((a, b) => b[1] - a[1])
-        .slice(0, 2)
-        .map(([key]) => key);
-      setTopMoods(topMoodsResult);
-
-      setSpotifyQuery(`${topGenreResult} ${topMoodsResult.join(" ")}`);
-    } catch (error) {
-      setError("Error parsing scores.");
-      console.error("Error parsing scores:", error);
-    }
-  }, [router.query.scores]);
-
-  useEffect(() => {
     if (!accessToken) {
       setError("Access token is missing.");
       return;
     }
-
+  
     console.log("Access Token in session:", accessToken); // Verifica que el access token esté en la sesión
-
+  
     if (spotifyQuery && accessToken) {
       fetchPlaylists(spotifyQuery, accessToken);
     }
   }, [spotifyQuery, accessToken]);
-
+  
   const fetchPlaylists = async (query, token) => {
     try {
       const encodedQuery = encodeURIComponent(query); // Codifica la query correctamente
@@ -86,24 +53,30 @@ export default function Results() {
           },
         }
       );
-
+  
       if (!response.ok) {
-        setError(`Error de Spotify API: ${response.status}`);
-        console.error(`Error de Spotify API: ${response.status}`);
+        setError(`Spotify API error: ${response.status}`);
+        console.error(`Spotify API error: ${response.status}`);
         console.error(await response.text()); // Imprime el mensaje de error
         return;
       }
-
+  
       const data = await response.json();
-      // Filtramos las playlists no válidas
-      setPlaylists(
-        data?.playlists?.items?.filter((item) => item && item.name) || []
-      );
+      const filteredPlaylists = data?.playlists?.items?.filter(
+        (item) => item && item.name && item.external_urls?.spotify
+      ); // Filtra playlists con nombre y link
+  
+      if (filteredPlaylists.length === 0) {
+        setError("No playlists found. Try a different search.");
+      } else {
+        setPlaylists(filteredPlaylists.slice(0, 3)); // Toma solo 3 playlists si hay más
+      }
     } catch (error) {
       setError("Error fetching playlists.");
       console.error("Error fetching playlists:", error);
     }
   };
+  
 
   if (status === "loading") return <p>Loading session...</p>;
   if (!scores) return <p>Loading results...</p>;
