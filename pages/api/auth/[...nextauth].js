@@ -20,14 +20,13 @@ export const authOptions = {
   callbacks: {
     async jwt({ token, account }) {
       if (account) {
-        // Guardamos el access token y el refresh token en el JWT
+  
         token.accessToken = account.access_token;
         token.refreshToken = account.refresh_token;
       }
       return token;
     },
     async session({ session, token }) {
-      // Hacemos disponible el access token en la sesión
       if (token.accessToken) {
         session.accessToken = token.accessToken;
       }
@@ -35,7 +34,7 @@ export const authOptions = {
     },
   },
   pages: {
-    signIn: '/auth/signin', // Ruta personalizada de inicio de sesión (si la tienes)
+    signIn: '/auth/signin', 
   },
 };
 
