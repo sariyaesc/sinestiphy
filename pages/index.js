@@ -155,6 +155,32 @@ export default function Home() {
             height="100%"
             className="absolute top-0 left-0 z-0"
           />
+
+          <div className="relative h-[100vh] flex flex-col justify-center items-center">
+                  <Background
+                    width="100%"
+                    height="100%"
+                    className="absolute top-0 left-0 z-0"
+                  />
+                  <div className="z-10 text-center">
+                    <h1 className="text-4xl text-white font-bold mb-5">
+                      Your Quiz Results
+                    </h1>
+                    <p className="text-white mb-3">
+                      <strong>Top Genre:</strong> 
+                    </p>
+                    <p className="text-white mb-3">
+                      <strong>Top Moods:</strong> 
+                    </p>
+                    <p className="text-white mb-3">
+                      <strong>Spotify Query:</strong> 
+                    </p>
+          
+                    <h2 className="text-white text-2xl mt-5">Suggested Playlists</h2>
+                    
+                    
+                  </div>
+                </div>
       </footer>
     </>
   );

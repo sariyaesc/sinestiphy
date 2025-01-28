@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { useSession } from "next-auth/react"; // Importa NextAuth
 import Background from "../components/common/Background";
+import Image from "next/image"
 
 export default function Results() {
   const { data: session, status } = useSession(); // Obtiene la sesión del usuario
@@ -135,30 +136,44 @@ export default function Results() {
           height="100%"
           className="absolute top-0 left-0 z-0"
         />
-        <div className="z-10 text-center">
-          <h1 className="text-4xl text-white font-bold mb-5">
-            Your Quiz Results
-          </h1>
-          <p className="text-white mb-3">
-            <strong>Top Genre:</strong> {topGenre}
-          </p>
-          <p className="text-white mb-3">
-            <strong>Top Moods:</strong> {topMoods.join(", ")}
-          </p>
-          <p className="text-white mb-3">
-            <strong>Spotify Query:</strong> {spotifyQuery}
-          </p>
+        <div className="relative z-10 w-4/5 grid grid-cols-2 gap-10">
+          {/* Columna izquierda: Texto */}
+          <div className="flex flex-col justify-center">
+            <h1 className="text-4xl text-white font-bold mb-5">
+              Your Quiz Results
+            </h1>
+            <p className="text-white mb-3">
+              <strong>Top Genre:</strong> {topGenre}
+            </p>
+            <p className="text-white mb-3">
+              <strong>Top Moods:</strong> {topMoods.join(", ")}
+            </p>
+            <p className="text-white mb-3">
+              <strong>Spotify Query:</strong> {spotifyQuery}
+            </p>
+          </div>
 
-          <h2 className="text-white text-2xl mt-5">Suggested Playlists</h2>
-          {playlists.length > 0 ? (
-            playlists.map((playlist) => (
-              <p key={playlist.id} className="text-white">
-                {playlist.name}
-              </p>
-            ))
-          ) : (
-            <p className="text-white">No playlists found</p>
-          )}
+          {/* Columna derecha: Tarjetas de playlists */}
+          <div className="grid grid-rows-3 gap-5">
+            {playlists.map((playlist) => (
+              <a
+                key={playlist.id}
+                href={playlist.external_urls.spotify}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-transform"
+              >
+                <Image
+                  src={playlist.images?.[0]?.url || "/placeholder.jpg"}
+                  alt={playlist.name}
+                  className="w-20 h-20 object-cover"
+                />
+                <div className="p-3">
+                  <h3 className="text-lg font-semibold">{playlist.name}</h3>
+                </div>
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </>
