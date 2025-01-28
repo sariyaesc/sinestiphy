@@ -19,7 +19,9 @@ export const authOptions = {
       return token;
     },
     async session({ session, token }) {
-      session.accessToken = token.accessToken; // Accede al token de la sesión
+      if (token.accessToken) {
+        session.accessToken = token.accessToken; // Accede al token de la sesión
+      }
       return session;
     },
   },

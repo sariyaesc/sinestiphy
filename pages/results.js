@@ -1,13 +1,13 @@
-import { useSession } from "next-auth/react"; // Importa NextAuth
-import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import { useSession } from "next-auth/react";  // Importa NextAuth
 import Background from "../components/common/Background";
 
 export default function Results() {
-  const { data: session, status } = useSession(); // Obtén la sesión del usuario
-  const accessToken = session?.accessToken; // Accede al access_token de la sesión
+  const { data: session, status } = useSession(); // Obtiene la sesión del usuario
+  const accessToken = session?.accessToken; // Extrae el accessToken correctamente
   const router = useRouter();
-  
+
   const [scores, setScores] = useState(null);
   const [topGenre, setTopGenre] = useState("");
   const [topMoods, setTopMoods] = useState([]);
@@ -43,6 +43,8 @@ export default function Results() {
   }, [router.query.scores]);
 
   useEffect(() => {
+    console.log("Access Token in session:", accessToken); // Verifica que el access token esté en la sesión
+
     if (spotifyQuery && accessToken) {
       fetchPlaylists(spotifyQuery, accessToken);
     }
@@ -56,13 +58,14 @@ export default function Results() {
           Authorization: `Bearer ${token}` // Asegúrate que el token sea válido
         }
       });
-  
+
       if (!response.ok) {
+        // Maneja los errores de la API
         console.error(`Error de Spotify API: ${response.status}`);
         console.error(await response.text()); // Imprime el mensaje de error
         return;
       }
-  
+
       const data = await response.json();
       setPlaylists(data?.playlists?.items || []);
     } catch (error) {
@@ -81,6 +84,8 @@ export default function Results() {
         <p className="text-white mb-3"><strong>Top Genre:</strong> {topGenre}</p>
         <p className="text-white mb-3"><strong>Top Moods:</strong> {topMoods.join(", ")}</p>
         <p className="text-white mb-3"><strong>Spotify Query:</strong> {spotifyQuery}</p>
+
+        {/* Muestra el accessToken */}
         <p className="text-white mb-3"><strong>Access Token:</strong> {accessToken}</p>
 
         <h2 className="text-white text-2xl mt-5">Suggested Playlists</h2>
