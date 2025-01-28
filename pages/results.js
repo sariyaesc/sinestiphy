@@ -29,58 +29,92 @@ export default function Results() {
   ];
   const moods = ["happy", "energetic", "mellow", "chill", "calm"];
 
+  // Extraer y procesar los puntajes del query param
+  useEffect(() => {
+    if (!router.query.scores) return;
+
+    try {
+      const parsedScores = JSON.parse(router.query.scores);
+      setScores(parsedScores);
+
+      const genreScores = Object.entries(parsedScores).filter(([key]) =>
+        genres.includes(key)
+      );
+      const moodScores = Object.entries(parsedScores).filter(([key]) =>
+        moods.includes(key)
+      );
+
+      const topGenreResult = genreScores.reduce(
+        (max, curr) => (curr[1] > max[1] ? curr : max),
+        ["", 0]
+      )[0];
+      setTopGenre(topGenreResult);
+
+      const topMoodsResult = moodScores
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 2)
+        .map(([key]) => key);
+      setTopMoods(topMoodsResult);
+
+      setSpotifyQuery(`${topGenreResult} ${topMoodsResult.join(" ")}`);
+    } catch (error) {
+      setError("Error parsing scores.");
+      console.error("Error parsing scores:", error);
+    }
+  }, [router.query.scores]);
+
+  // Buscar playlists en Spotify
   useEffect(() => {
     if (!accessToken) {
       setError("Access token is missing.");
       return;
     }
-  
+
     console.log("Access Token in session:", accessToken); // Verifica que el access token esté en la sesión
-  
+
     if (spotifyQuery && accessToken) {
       fetchPlaylists(spotifyQuery, accessToken);
     }
   }, [spotifyQuery, accessToken]);
-  
+
   const fetchPlaylists = async (query, token) => {
     try {
-      const encodedQuery = encodeURIComponent(query); // Codifica la query correctamente
+      const encodedQuery = encodeURIComponent(query);
       const response = await fetch(
         `https://api.spotify.com/v1/search?q=${encodedQuery}&type=playlist&limit=3`,
         {
           headers: {
-            Authorization: `Bearer ${token}`, // Asegúrate que el token sea válido
+            Authorization: `Bearer ${token}`,
           },
         }
       );
-  
+
       if (!response.ok) {
         setError(`Spotify API error: ${response.status}`);
         console.error(`Spotify API error: ${response.status}`);
-        console.error(await response.text()); // Imprime el mensaje de error
+        console.error(await response.text());
         return;
       }
-  
+
       const data = await response.json();
       const filteredPlaylists = data?.playlists?.items?.filter(
         (item) => item && item.name && item.external_urls?.spotify
-      ); // Filtra playlists con nombre y link
-  
+      );
+
       if (filteredPlaylists.length === 0) {
         setError("No playlists found. Try a different search.");
       } else {
-        setPlaylists(filteredPlaylists.slice(0, 3)); // Toma solo 3 playlists si hay más
+        setPlaylists(filteredPlaylists.slice(0, 3)); // Asegura que sean 3 playlists
       }
     } catch (error) {
       setError("Error fetching playlists.");
       console.error("Error fetching playlists:", error);
     }
   };
-  
 
   if (status === "loading") return <p>Loading session...</p>;
   if (!scores) return <p>Loading results...</p>;
-  if (error) return <p className="text-red-500">{error}</p>; // Muestra el mensaje de error
+  if (error) return <p className="text-red-500">{error}</p>;
 
   return (
     <>
