@@ -154,26 +154,29 @@ export default function Results() {
           </div>
 
           {/* Columna derecha: Tarjetas de playlists */}
-          <div className="grid grid-rows-3 gap-5">
-            {playlists.map((playlist) => (
-              <a
-                key={playlist.id}
-                href={playlist.external_urls.spotify}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-transform"
-              >
-                <Image
-                  src={playlist.images?.[0]?.url || "/placeholder.jpg"}
-                  alt={playlist.name}
-                  className="w-20 h-20 object-cover"
-                />
-                <div className="p-3">
-                  <h3 className="text-lg font-semibold">{playlist.name}</h3>
-                </div>
-              </a>
-            ))}
-          </div>
+          <div className="grid grid-rows-3 gap-5 w-full max-w-lg">
+  {playlists.map((playlist) => (
+    <a
+      key={playlist.id}
+      href={playlist.external_urls.spotify}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex items-center bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-transform w-full"
+    >
+      <div className="relative w-32 h-32">
+        <Image
+          src={playlist.images?.[0]?.url || "/placeholder.jpg"}
+          alt={playlist.name}
+          layout="fill"
+          objectFit="cover"
+        />
+      </div>
+      <div className="p-3 flex-1">
+        <h3 className="text-lg font-semibold">{playlist.name}</h3>
+      </div>
+    </a>
+  ))}
+</div>
         </div>
       </div>
     </>
