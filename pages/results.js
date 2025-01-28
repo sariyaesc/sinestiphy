@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { useSession } from "next-auth/react"; // Importa NextAuth
 import Background from "../components/common/Background";
-import Image from "next/image"
+import Image from "next/image";
 
 export default function Results() {
   const { data: session, status } = useSession(); // Obtiene la sesión del usuario
@@ -139,44 +139,42 @@ export default function Results() {
         <div className="relative z-10 w-4/5 grid grid-cols-2 gap-10">
           {/* Columna izquierda: Texto */}
           <div className="flex flex-col justify-center">
-            <h1 className="text-4xl text-white font-bold mb-5">
-              Your Quiz Results
-            </h1>
-            <p className="text-white mb-3">
+            <h1 className="text-6xl text-white font-bold mb-5">YOUR RESULTS</h1>
+            <p className="text-white mb-3 text-lg">
               <strong>Top Genre:</strong> {topGenre}
             </p>
-            <p className="text-white mb-3">
+            <p className="text-white mb-3 text-lg">
               <strong>Top Moods:</strong> {topMoods.join(", ")}
             </p>
-            <p className="text-white mb-3">
+            <p className="text-white mb-3 text-lg">
               <strong>Spotify Query:</strong> {spotifyQuery}
             </p>
           </div>
 
           {/* Columna derecha: Tarjetas de playlists */}
-          <div className="grid grid-rows-3 gap-5 w-full max-w-lg">
-  {playlists.map((playlist) => (
-    <a
-      key={playlist.id}
-      href={playlist.external_urls.spotify}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="flex items-center bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-transform w-full"
-    >
-      <div className="relative w-32 h-32">
-        <img
-          src={playlist.images?.[0]?.url || "/placeholder.jpg"}
-          alt={playlist.name}
-          layout="fill"
-          objectFit="cover"
-        />
-      </div>
-      <div className="p-3 flex-1">
-        <h3 className="text-lg font-semibold">{playlist.name}</h3>
-      </div>
-    </a>
-  ))}
-</div>
+          <div className="grid grid-cols-1 justify-items-center gap-5 w-full max-w-lg min-h-screen">
+            {playlists.map((playlist) => (
+              <a
+                key={playlist.id}
+                href={playlist.external_urls.spotify}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-transform w-full"
+              >
+                <div className="relative w-32 h-32">
+                  <img
+                    src={playlist.images?.[0]?.url || "/placeholder.jpg"}
+                    alt={playlist.name}
+                    layout="fill"
+                    objectFit="cover"
+                  />
+                </div>
+                <div className="p-3 flex-1">
+                  <h3 className="text-lg font-semibold p">{playlist.name}</h3>
+                </div>
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </>
