@@ -1,31 +1,31 @@
-import React from 'react';
+import NextAuth from 'next-auth';
+import SpotifyProvider from 'next-auth/providers/spotify';
 
-const LoginBtnSpotify = () => {
-  const clientId = 'your_client_id'; // Replace with your Spotify client ID
-  const redirectUri = 'https://sinestiphy.vercel.app/quiz/1';
-  const scopes = [
-    'user-read-private',
-    'user-read-email', 
-    'playlist-read-private',
-    'playlist-modify-public',
-    'playlist-modify-private',
-  ];
-
-  const handleLogin = () => {
-    const authUrl = `https://accounts.spotify.com/authorize?` +
-      `client_id=${clientId}` +
-      `&response_type=code` +
-      `&redirect_uri=${encodeURIComponent(redirectUri)}` +
-      `&scope=${encodeURIComponent(scopes.join(' '))}`;
-    
-    window.location.href = authUrl;
-  };
-
-  return (
-    <button onClick={handleLogin} style={{ padding: '10px 20px', background: '#1DB954', color: '#fff', border: 'none', borderRadius: '4px', cursor: 'pointer' }}>
-      Login with Spotify
-    </button>
-  );
+export const authOptions = {
+  providers: [
+    SpotifyProvider({
+      clientId: process.env.SPOTIFY_CLIENT_ID,
+      clientSecret: process.env.SPOTIFY_CLIENT_SECRET,
+      authorization: `https://accounts.spotify.com/authorize?scope=user-read-private%20user-read-email%20playlist-read-private%20playlist-modify-public%20playlist-modify-private`,
+      token: 'https://accounts.spotify.com/api/token',
+      userinfo: 'https://api.spotify.com/v1/me',
+    }),
+  ],
+  callbacks: {
+    async jwt({ token, account }) {
+      if (account) {
+        token.accessToken = account.access_token; // Guarda el access token en el token JWT
+      }
+      return token;
+    },
+    async session({ session, token }) {
+      session.accessToken = token.accessToken; // Accede al token de la sesión
+      return session;
+    },
+  },
+  pages: {
+    signIn: '/auth/signin', // Asegúrate de que la ruta sea la correcta
+  },
 };
 
-export default LoginBtnSpotify;
+export default NextAuth(authOptions);

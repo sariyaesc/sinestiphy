@@ -1,11 +1,11 @@
-import { useRouter } from "next/router";
+import { useSession } from "next-auth/react"; // Importa NextAuth
 import { useEffect, useState } from "react";
-import { useSession } from "next-auth/react";  // Importa NextAuth
+import { useRouter } from "next/router";
 import Background from "../components/common/Background";
 
 export default function Results() {
-  const { data: session, status } = useSession(); // Obtiene la sesión del usuario
-  const accessToken = session?.user?.accessToken; // Extrae el accessToken correctamente
+  const { data: session, status } = useSession(); // Obtén la sesión del usuario
+  const accessToken = session?.accessToken; // Accede al access_token de la sesión
   const router = useRouter();
   
   const [scores, setScores] = useState(null);
@@ -50,26 +50,26 @@ export default function Results() {
 
   const fetchPlaylists = async (query, token) => {
     try {
-      const response = await fetch(`https://api.spotify.com/v1/search?q=${encodeURIComponent(query)}&type=playlist&limit=3&market=ES`, {
+      const encodedQuery = encodeURIComponent(query); // Codifica la query correctamente
+      const response = await fetch(`https://api.spotify.com/v1/search?q=${encodedQuery}&type=playlist&limit=3&market=ES`, {
         headers: {
-          Authorization: `Bearer ${token}`
+          Authorization: `Bearer ${token}` // Asegúrate que el token sea válido
         }
       });
-      
-
+  
       if (!response.ok) {
-        throw new Error(`Error de Spotify API: ${response.status}`);
+        console.error(`Error de Spotify API: ${response.status}`);
+        console.error(await response.text()); // Imprime el mensaje de error
+        return;
       }
-
+  
       const data = await response.json();
       setPlaylists(data?.playlists?.items || []);
-      console.log("ejectuandose lokoo");
     } catch (error) {
       console.error("Error fetching playlists:", error);
     }
   };
 
-    
   if (status === "loading") return <p>Loading session...</p>;
   if (!scores) return <p>Loading results...</p>;
 
