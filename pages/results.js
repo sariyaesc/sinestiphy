@@ -60,7 +60,7 @@ export default function Results() {
   const fetchPlaylists = async (query, token) => {
     try {
       const encodedQuery = encodeURIComponent(query); // Codifica la query correctamente
-      const response = await fetch(`https://api.spotify.com/v1/search?q=${encodedQuery}&type=playlist&limit=3&market=ES`, {
+      const response = await fetch(`https://api.spotify.com/v1/search?q=${encodedQuery}&type=playlist&limit=3`, {
         headers: {
           Authorization: `Bearer ${token}` // Asegúrate que el token sea válido
         }

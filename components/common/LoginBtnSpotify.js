@@ -1,5 +1,5 @@
-import { signIn, useSession } from 'next-auth/react';
-import { useRouter } from 'next/router';
+import { signIn, useSession } from "next-auth/react";
+import { useRouter } from "next/router";
 
 export default function LoginBtnSpotify({ children }) {
   const { data: session } = useSession();
@@ -8,10 +8,14 @@ export default function LoginBtnSpotify({ children }) {
   const handleRedirect = () => {
     if (!session) {
       // Si no está autenticado, inicia sesión
-      signIn('spotify');
+      signIn("spotify");
+    } else if (session.error) {
+      console.error("Error during session:", session.error);
+      alert("Hubo un problema con tu sesión. Intenta iniciar sesión de nuevo.");
+      signIn("spotify");
     } else {
       // Si ya está autenticado, redirige a la página deseada
-      router.push('/quiz/1'); // Cambia esto por la ruta a la que quieres redirigir
+      router.push("/quiz/1"); // Cambia esto por la ruta a la que quieres redirigir
     }
   };
 
