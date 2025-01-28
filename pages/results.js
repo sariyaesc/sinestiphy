@@ -13,6 +13,7 @@ export default function Results() {
   const [topMoods, setTopMoods] = useState([]);
   const [spotifyQuery, setSpotifyQuery] = useState("");
   const [playlists, setPlaylists] = useState([]); // Estado para almacenar playlists
+  const [error, setError] = useState(null); // Manejo de errores
 
   const genres = ["funk", "cumbia", "country", "disco", "house", "soul jazz", "lofi", "r&b", "reggaeton", "pop"];
   const moods = ["happy", "energetic", "mellow", "chill", "calm"];
@@ -38,11 +39,17 @@ export default function Results() {
 
       setSpotifyQuery(`${topGenreResult} ${topMoodsResult.join(" ")}`);
     } catch (error) {
+      setError("Error parsing scores.");
       console.error("Error parsing scores:", error);
     }
   }, [router.query.scores]);
 
   useEffect(() => {
+    if (!accessToken) {
+      setError("Access token is missing.");
+      return;
+    }
+
     console.log("Access Token in session:", accessToken); // Verifica que el access token esté en la sesión
 
     if (spotifyQuery && accessToken) {
@@ -60,21 +67,24 @@ export default function Results() {
       });
 
       if (!response.ok) {
-        // Maneja los errores de la API
+        setError(`Error de Spotify API: ${response.status}`);
         console.error(`Error de Spotify API: ${response.status}`);
         console.error(await response.text()); // Imprime el mensaje de error
         return;
       }
 
       const data = await response.json();
-      setPlaylists(data?.playlists?.items || []);
+      // Filtramos las playlists no válidas
+      setPlaylists(data?.playlists?.items?.filter(item => item && item.name) || []);
     } catch (error) {
+      setError("Error fetching playlists.");
       console.error("Error fetching playlists:", error);
     }
   };
 
   if (status === "loading") return <p>Loading session...</p>;
   if (!scores) return <p>Loading results...</p>;
+  if (error) return <p className="text-red-500">{error}</p>; // Muestra el mensaje de error
 
   return (
     <div className="relative h-[100vh] flex flex-col justify-center items-center">
