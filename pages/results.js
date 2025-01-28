@@ -164,7 +164,7 @@ export default function Results() {
       className="flex items-center bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-transform w-full"
     >
       <div className="relative w-32 h-32">
-        <Image
+        <img
           src={playlist.images?.[0]?.url || "/placeholder.jpg"}
           alt={playlist.name}
           layout="fill"
