@@ -13,7 +13,14 @@ export default function QuizQuestion() {
 
   const [scores, setScores] = useState({});
   
-  if (!questionData) return <p>Loading...</p>;
+  if (!questionData) return (
+  <>
+  <Background width="100%"
+          height="100%"
+          className="absolute top-0 left-0 z-0 brightness-90"></Background>
+  <p className="text-white mt-3 mb-5 text-3xl relative h-[100vh] flex flex-col p-16 justify-center items-center">Loading...</p>
+  </>
+)
 
   const handleAnswer = (answerScores) => {
     const updatedScores = { ...scores };
