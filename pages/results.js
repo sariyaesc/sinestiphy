@@ -81,6 +81,7 @@ export default function Results() {
         <p className="text-white mb-3"><strong>Top Genre:</strong> {topGenre}</p>
         <p className="text-white mb-3"><strong>Top Moods:</strong> {topMoods.join(", ")}</p>
         <p className="text-white mb-3"><strong>Spotify Query:</strong> {spotifyQuery}</p>
+        <p className="text-white mb-3"><strong>Access Token:</strong> {accessToken}</p>
 
         <h2 className="text-white text-2xl mt-5">Suggested Playlists</h2>
         {playlists.length > 0 ? (
