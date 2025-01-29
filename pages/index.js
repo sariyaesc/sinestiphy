@@ -143,7 +143,10 @@ export default function Home() {
           </p>
           <p className="text-white text-semibold px-7 text-lg">
             We wanna hear about you! If you have any suggestion, comment, or anything you wanna share
-            this is your chance. You can leave whatever you want right <a href="https://docs.google.com/forms/d/e/1FAIpQLSdCQu86HhG_p1y_ejkXAgkkJpS5BvY7H9Nn8wEilCmOHY3Umw/viewform?usp=header">here</a> 
+            this is your chance. You can leave whatever you want right <a 
+            href="https://docs.google.com/forms/d/e/1FAIpQLSdCQu86HhG_p1y_ejkXAgkkJpS5BvY7H9Nn8wEilCmOHY3Umw/viewform?usp=header"
+            className="underline">
+              here.</a> 
           </p>
   
         </section>
