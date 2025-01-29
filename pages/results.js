@@ -27,6 +27,7 @@ export default function Results() {
     "r&b",
     "reggaeton",
     "pop",
+    "classic",
   ];
   const moods = ["happy", "energetic", "mellow", "chill", "calm"];
 
