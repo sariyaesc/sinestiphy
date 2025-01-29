@@ -276,6 +276,7 @@
       "scores": { 
         "techno": 0.95,
         "hip hop rap": 0.92,
+        "punk":0.87,
         "disco": 0.85,
         "sad": 0.88,
         "moody": 0.92,
