@@ -153,28 +153,29 @@ export default function Results() {
 
           {/* Columna derecha: Tarjetas de playlists */}
           <div className="grid grid-cols-1 justify-items-center gap-5 w-full max-w-lg min-h-screen">
-            {playlists.map((playlist) => (
-              <a
-                key={playlist.id}
-                href={playlist.external_urls.spotify}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-transform w-full"
-              >
-                <div className="relative w-32 h-32">
-                  <img
-                    src={playlist.images?.[0]?.url || "/placeholder.jpg"}
-                    alt={playlist.name}
-                    layout="fill"
-                    objectFit="cover"
-                  />
-                </div>
-                <div className="p-3 flex-1">
-                  <h3 className="text-lg font-semibold p">{playlist.name}</h3>
-                </div>
-              </a>
-            ))}
-          </div>
+  {playlists.map((playlist) => (
+    <a
+      key={playlist.id}
+      href={playlist.external_urls.spotify}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex items-center bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-transform w-72"  {/* Cambié w-full por w-72 */}
+    >
+      <div className="relative w-32 h-32">
+        <img
+          src={playlist.images?.[0]?.url || "/placeholder.jpg"}
+          alt={playlist.name}
+          layout="fill"
+          objectFit="cover"
+        />
+      </div>
+      <div className="p-3 flex-1">
+        <h3 className="text-lg font-semibold p">{playlist.name}</h3>
+      </div>
+    </a>
+  ))}
+</div>
+
         </div>
       </div>
     </>
