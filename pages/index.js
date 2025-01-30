@@ -124,10 +124,11 @@ export default function Home() {
             We are a great one-person team :)
           </p>
           <p className="text-white text-semibold px-7 text-lg">
-            Now seriously, this test was made based on the opinions of different
+          Now seriously, this app comes from the local joke “funk jazz is a
+          mango with honey” that originated from a roadtrip listening to music. 
+          This test was made based on the opinions of different
             synaesthetic users, research of information and comparison of
-            results. We are in constant progress, so we are always (me and the
-            voices) open to suggestions to improve the experience.
+            results. 
           </p>
         </section>
 
@@ -142,7 +143,7 @@ export default function Home() {
             Now your turn 
           </p>
           <p className="text-white text-semibold px-7 text-lg">
-            We wanna hear about you! If you have any suggestion, comment, or anything you wanna share
+            We wanna hear about you! If you have any suggestion, comment, or anything you wanna share,
             this is your chance. You can leave whatever you want right <a 
             href="https://docs.google.com/forms/d/e/1FAIpQLSdCQu86HhG_p1y_ejkXAgkkJpS5BvY7H9Nn8wEilCmOHY3Umw/viewform?usp=header"
             className="underline">
