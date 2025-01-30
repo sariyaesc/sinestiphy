@@ -28,8 +28,15 @@ export default function Results() {
     "reggaeton",
     "pop",
     "classic",
+    "punk",
+    "indie pop",
+    "hip hop rap",
+    "metal",
+    "rock",
+    "techno",
+    "corridos",
   ];
-  const moods = ["happy", "energetic", "mellow", "chill", "calm"];
+  const moods = ["happy", "energetic", "mellow", "chill", "calm","glam","sad","dark","moody","girly",""];
 
   // Extraer y procesar los puntajes del query param
   useEffect(() => {
