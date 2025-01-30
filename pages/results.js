@@ -36,7 +36,7 @@ export default function Results() {
     "techno",
     "corridos",
   ];
-  const moods = ["happy", "energetic", "mellow", "chill", "calm","glam","sad","dark","moody","girly",""];
+  const moods = ["happy", "energetic", "mellow", "chill", "calm","glam","sad","dark","moody","girly",];
 
   // Extraer y procesar los puntajes del query param
   useEffect(() => {
